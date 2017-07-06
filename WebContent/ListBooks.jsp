@@ -11,7 +11,8 @@
 			<% User user=(User)session.getAttribute("Logged_in_user");
 			%>
 			welcome<%=user.getName()
-			%>
+			%>!!!
+			<a href="LogoutServlet">Logout</a>
 			
 		
 	<h3>List Books</h3>
