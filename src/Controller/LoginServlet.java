@@ -3,6 +3,7 @@ package Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +36,10 @@ public class LoginServlet extends HttpServlet
 		out.println(user);
 		if(user==null)
 		{				response.sendRedirect("login.html");
+		                request.setAttribute("Error message","invalid login");
+		                RequestDispatcher dispatcher=request.getRequestDispatcher("login.jsp");
+		                dispatcher.forward(request,response);
+		                
 		}
 		else
 		{
